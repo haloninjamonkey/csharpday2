@@ -31,17 +31,18 @@ namespace dice
                 bool sidesSuccess = Int32.TryParse(valuesArray[1], out int sidesOfDice);
                 //attempt to convert strings to ints
                 //if both succeeded
-                
+                int total = 0;
                 if (numberSuccess && sidesSuccess)
                 {
                     System.Console.WriteLine("rolling...");
-                    int total = 0;
+                    
                     
                     for(int i = 0; i < numberOfDice; i++) 
                     {
                         int roll = rng.Next(1, sidesOfDice+1);
                         // System.Console.WriteLine(roll);
                         // Thread.Sleep(250);
+
                         total += roll;
                     }
                     System.Console.WriteLine("Total: " + total);
